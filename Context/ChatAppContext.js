@@ -35,7 +35,7 @@ export const ChatAppProvider = ({ children }) => {
       const connectAccount = await connectWallet()
       setAccount(connectAccount)
       //GET USER NAME
-      const userName = await contract?.getUsername(connectAccount)
+      const userName = await (contract.getUsername(connectAccount))??
       setUserName(userName)
       //GET MY FRIEND LIST
       const friendLists = await contract.getMyFriendList()

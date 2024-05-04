@@ -11,28 +11,28 @@ import images from '../../assets'
 const NavBar = () => {
   const menuItems = [
     {
-      menu: 'All Users',
+      menu: 'ALL USERS',
       link: 'alluser',
     },
     {
       menu: 'CHAT',
       link: '/',
     },
-    {
-      menu: 'CONTACT',
-      link: '/',
-    },
-    {
-      menu: 'SETTING',
-      link: '/',
-    },
+    // {
+    //   menu: 'CONTACT',
+    //   link: '/',
+    // },
+    // {
+    //   menu: 'SETTING',
+    //   link: '/',
+    // },
     {
       menu: 'FAQS',
       link: '/',
     },
     {
       menu: 'TERMS OF USE',
-      link: '/',
+      link: 'terms',
     },
   ]
 
@@ -48,7 +48,7 @@ const NavBar = () => {
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
-          <Image src={images.logo} alt="logo" width={50} height={50} />
+          <Image fetchpriority = 'high' src={images.logo} alt="logo" width={50} height={50} />
         </div>
         <div className={Style.NavBar_box_right}>
           {/* //DESKTOP */}

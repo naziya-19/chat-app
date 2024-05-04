@@ -70,20 +70,47 @@ export const connectingWithContract = async () => {
 };
 
 export const converTime = (time) => {
-  const newTime = new Date(Number(time));
+  try{
+  const newTime = new Date(Number(time)*1000);
+
+  const hours = newTime.getHours();
+  const minutes = newTime.getMinutes();
+  const seconds = newTime.getSeconds();
+  const date = newTime.getDate();
+  const month = newTime.getMonth() + 1; // Months are zero-indexed
+  const year = newTime.getFullYear();
 
   const realTime =
-    newTime.getHours() +
-    "/" +
-    newTime.getMinutes() +
-    "/" +
-    newTime.getSeconds() +
+    `${hours < 10 ? '0' + hours : hours}` +
+    ":" +
+    `${minutes < 10 ? '0' + minutes : minutes}` +
+    ":" +
+    `${seconds < 10 ? '0' + seconds : seconds}` +
     "  Date:" +
-    newTime.getDate() +
+    `${date < 10 ? '0' + date : date}` +
     "/" +
-    (newTime.getMonth() + 1) +
+    `${month < 10 ? '0' + month : month}` +
     "/" +
-    newTime.getFullYear();
+    year;
 
   return realTime;
+} catch (error) {
+  console.log(error);
+  return null;
+}
+
+  // const realTime =
+  //   newTime.getHours() +
+  //   "/" +
+  //   newTime.getMinutes() +
+  //   "/" +
+  //   newTime.getSeconds() +
+  //   "  Date:" +
+  //   newTime.getDate() +
+  //   "/" +
+  //   (newTime.getMonth() + 1) +
+  //   "/" +
+  //   newTime.getFullYear();
+
+  // return realTime;
 };

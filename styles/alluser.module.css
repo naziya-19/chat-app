@@ -3,12 +3,13 @@
     width: 80%;
     margin: 4rem auto;
     font-size: 1.5rem;
+    color: white;
 }
 
 .alluser{
     width: 80%;
     margin: 2rem auto;
-
+    /* color: white; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
@@ -19,6 +20,7 @@
         width: 90%;
         font-size: 1rem;
         margin: 2rem auto;
+        color: white;
     }
 
     .alluser{
